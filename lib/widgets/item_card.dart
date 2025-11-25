@@ -285,6 +285,7 @@ class ItemCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final lowerLabel = label.toLowerCase();
  return Container(
   width: 84, // Reduced width by 40%
   height: 140, // Reduced height by 40%
@@ -345,14 +346,15 @@ class ItemCard extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                 Text(
-                      "$value kg",
-                      style: const TextStyle(
-                        fontSize: 12, // Reduced font size by 40%
-                        fontWeight: FontWeight.w600,
-                        color: Colors.black87,
-                      ),
-                    ),
+                Text(
+  "$value ${ (lowerLabel == 'ac' || lowerLabel == 'fridge') ? 'qty' : 'kg' }",
+  style: const TextStyle(
+    fontSize: 12,
+    fontWeight: FontWeight.w600,
+    color: Colors.black87,
+  ),
+),
+
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
