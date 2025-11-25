@@ -34,7 +34,7 @@ class _GeneralPickupPageState extends State<GeneralPickupPage> {
   int fridgekg = 0;
   int ackg = 0;
   int mixedkg = 0;
- 
+
   @override
   void initState() {
     super.initState();
@@ -193,7 +193,7 @@ Widget build(BuildContext context) {
       content: Semantics(
         label: 'Entered Maximum weight',
         child: const Text(
-          "Weight is more than 400+ and thanks for your input.",
+          "Weight is more than 4000+ and thanks for your input.",
           style: TextStyle(fontSize: 14, color: Colors.black54),
         ),
       ),
@@ -532,14 +532,14 @@ Widget build(BuildContext context) {
       'des': "We buy plastic products, including plastic bottles, plastic chairs, plastic containers, plastic buckets, plastic crates, plastic toys, plastic pipes, plastic jugs, plastic tubs, and plastic household items.",
 
         'onAdd': () {
-          if (plasticKg > 400) {
+          if (plasticKg > 4000) {
             confirmAction(context);
           } else {
-            setState(() => plasticKg += 10);
+            setState(() => plasticKg += 100);
           }
         },
         'onRemove': () => setState(() {
-          if (plasticKg > 0) plasticKg -= 10;
+          if (plasticKg > 0) plasticKg -= 100;
         }),
       },
       {
@@ -549,14 +549,14 @@ Widget build(BuildContext context) {
          'des': "We buy glass bottle products, including beer bottles, wine bottles, whisky bottles, soda bottles, juice bottles, sauce bottles, milk bottles, and other reusable glass containers.",
 
         'onAdd': () {
-          if (glassKg > 400) {
+          if (glassKg > 4000) {
             confirmAction(context);
           } else {
-            setState(() => glassKg += 10);
+            setState(() => glassKg += 100);
           }
         },
         'onRemove': () => setState(() {
-          if (glassKg > 0) glassKg -= 10;
+          if (glassKg > 0) glassKg -= 100;
         }),
       },
       {
@@ -566,14 +566,14 @@ Widget build(BuildContext context) {
         'des': "We buy newspaper products, including old and used newspapers.",
 
         'onAdd': () {
-          if (paperKg > 400) {
+          if (paperKg > 4000) {
             confirmAction(context);
           } else {
-            setState(() => paperKg += 10);
+            setState(() => paperKg += 100);
           }
         },
         'onRemove': () => setState(() {
-          if (paperKg > 0) paperKg -= 10;
+          if (paperKg > 0) paperKg -= 100;
         }),
       },
       {
@@ -584,14 +584,14 @@ Widget build(BuildContext context) {
 
         'onAdd': () {
           
-          if (bookskg > 400) {
+          if (bookskg > 4000) {
             confirmAction(context);
           } else {
-            setState(() => bookskg += 10);
+            setState(() => bookskg += 100);
           }
         },
         'onRemove': () => setState(() {
-          if (bookskg > 0) bookskg -= 10;
+          if (bookskg > 0) bookskg -= 100;
         }),
       },
       {
@@ -601,14 +601,14 @@ Widget build(BuildContext context) {
         'des': "We buy electronic waste, including gas stoves, iron boxes, table fans, ceiling fans, refrigerators, washing machines, microwaves, computers, printers, and other household and office electronic appliances.",
 
         'onAdd': () {
-          if (ewasteKg > 400) {
+          if (ewasteKg > 4000) {
             confirmAction(context);
           } else {
-            setState(() => ewasteKg += 10);
+            setState(() => ewasteKg += 100);
           }
         },
         'onRemove': () => setState(() {
-          if (ewasteKg > 0) ewasteKg -= 10;
+          if (ewasteKg > 0) ewasteKg -= 100;
         }),
       },
       {
@@ -617,14 +617,14 @@ Widget build(BuildContext context) {
          'url':"assets/images/cardboard.jpg",
          'des':"We buy cardboard products, including book covers, food boxes, cosmetic boxes, shipping boxes, moving boxes, protective packaging, grocery bags, and envelopes.",
         'onAdd': () {
-          if (cardKg > 400) {
+          if (cardKg > 4000) {
             confirmAction(context);
           } else {
-            setState(() => cardKg += 10);
+            setState(() => cardKg += 100);
           }
         },
         'onRemove': () => setState(() {
-          if (cardKg > 0) cardKg -= 10;
+          if (cardKg > 0) cardKg -= 100;
         }),
       },
     ];
@@ -688,14 +688,14 @@ Widget build(BuildContext context) {
         'des': "We buy iron products, including iron rods, iron pipes, iron sheets, iron tins, gates, grills, frames, and all other iron and steel materials.",
 
         'onAdd': () {
-          if (metalKg > 400) {
+          if (metalKg > 4000) {
             confirmAction(context);
           } else {
-            setState(() => metalKg += 10);
+            setState(() => metalKg += 100);
           }
         },
         'onRemove': () => setState(() {
-          if (metalKg > 0) metalKg -= 10;
+          if (metalKg > 0) metalKg -= 100;
         }),
       },
       {
@@ -704,14 +704,14 @@ Widget build(BuildContext context) {
          'url':"assets/images/wcopper.jpg",
          'des': "We buy copper wire, including electrical copper wires, insulated copper wires, bare copper wires, and all other types of copper wiring.", 
         'onAdd': () {
-          if (cwirekg > 400) {
+          if (cwirekg > 4000) {
             confirmAction(context);
           } else {
-            setState(() => cwirekg += 10);
+            setState(() => cwirekg += 100);
           }
         },
         'onRemove': () => setState(() {
-          if (cwirekg > 0) cwirekg -= 10;
+          if (cwirekg > 0) cwirekg -= 100;
         }),
       },
       {
@@ -738,14 +738,14 @@ Widget build(BuildContext context) {
          'des': "We buy silver items, including silver plates, bowls, cups, jewelry, coins, utensils, ornaments, and all other silver products.",
 
         'onAdd': () {
-          if (silverkg > 400) {
+          if (silverkg > 4000) {
             confirmAction(context);
           } else {
-            setState(() => silverkg += 10);
+            setState(() => silverkg += 100);
           }
         },
         'onRemove': () => setState(() {
-          if (silverkg > 0) silverkg -= 10;
+          if (silverkg > 0) silverkg -= 100;
         }),
       },
       {
@@ -827,11 +827,11 @@ Widget build(BuildContext context) {
           if (fridgekg > 400) {
             confirmAction(context);
           } else {
-            setState(() => fridgekg += 10);
+            setState(() => fridgekg += 1);
           }
         },
         'onRemove': () => setState(() {
-          if (fridgekg > 0) fridgekg -= 10;
+          if (fridgekg > 0) fridgekg -= 1;
         }),
       },
       {
@@ -844,11 +844,11 @@ Widget build(BuildContext context) {
           if (ackg > 400) {
             confirmAction(context);
           } else {
-            setState(() => ackg += 10);
+            setState(() => ackg += 1);
           }
         },
         'onRemove': () => setState(() {
-          if (ackg > 0) ackg -= 10;
+          if (ackg > 0) ackg -= 1;
         }),
       },
       {
@@ -858,14 +858,14 @@ Widget build(BuildContext context) {
        'des': "We buy e-waste, including non-commercial wires, hair dryers, printers, CPUs, ovens, mixers, TVs, keyboards, and other household electronic appliances.",
 
         'onAdd': () {
-          if (mixedkg > 400) {
+          if (mixedkg > 4000) {
             confirmAction(context);
           } else {
-            setState(() => mixedkg += 10);
+            setState(() => mixedkg += 100);
           }
         },
         'onRemove': () => setState(() {
-          if (mixedkg > 0) mixedkg -= 10;
+          if (mixedkg > 0) mixedkg -= 100;
         }),
       },
    
