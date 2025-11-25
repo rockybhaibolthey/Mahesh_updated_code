@@ -16,6 +16,7 @@ class GeneralPickupPage extends StatefulWidget {
   State<GeneralPickupPage> createState() => _GeneralPickupPageState();
 }
 
+
 class _GeneralPickupPageState extends State<GeneralPickupPage> {
   final ScrollController _scrollController = ScrollController();
   bool _showScrollToBottomButton = true;
