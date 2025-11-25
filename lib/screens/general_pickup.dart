@@ -529,8 +529,8 @@ Widget build(BuildContext context) {
         'label': 'Plastic',
         'value': plasticKg,
         'url':"assets/images/plastic.jpg",
-         'des':"We buy cardboard products, including book covers, food boxes, cosmetic boxes, shipping boxes, moving boxes, protective packaging, grocery bags, and envelopes.",
-        
+      'des': "We buy plastic products, including plastic bottles, plastic chairs, plastic containers, plastic buckets, plastic crates, plastic toys, plastic pipes, plastic jugs, plastic tubs, and plastic household items.",
+
         'onAdd': () {
           if (plasticKg > 400) {
             confirmAction(context);
@@ -546,8 +546,8 @@ Widget build(BuildContext context) {
         'label': 'Glass',
         'value': glassKg,
          'url':"assets/images/glass.jpg",
-          'des':"We buy cardboard products, including book covers, food boxes, cosmetic boxes, shipping boxes, moving boxes, protective packaging, grocery bags, and envelopes.",
-        
+         'des': "We buy glass bottle products, including beer bottles, wine bottles, whisky bottles, soda bottles, juice bottles, sauce bottles, milk bottles, and other reusable glass containers.",
+
         'onAdd': () {
           if (glassKg > 400) {
             confirmAction(context);
@@ -563,8 +563,8 @@ Widget build(BuildContext context) {
         'label': 'Paper',
         'value': paperKg,
          'url':"assets/images/news.jpg",
-          'des':"We buy cardboard products, including book covers, food boxes, cosmetic boxes, shipping boxes, moving boxes, protective packaging, grocery bags, and envelopes.",
-        
+        'des': "We buy newspaper products, including old and used newspapers.",
+
         'onAdd': () {
           if (paperKg > 400) {
             confirmAction(context);
@@ -580,8 +580,8 @@ Widget build(BuildContext context) {
         'label': 'Books',
         'value': bookskg,
          'url':"assets/images/books.jpg",
-          'des':"We buy cardboard products, including book covers, food boxes, cosmetic boxes, shipping boxes, moving boxes, protective packaging, grocery bags, and envelopes.",
-        
+          'des': "We buy paper products, including books, shredded paper, pamphlets, magazines, notebooks, office paper, envelopes, and other paper materials, excluding newspapers.",
+
         'onAdd': () {
           
           if (bookskg > 400) {
@@ -598,8 +598,8 @@ Widget build(BuildContext context) {
         'label': 'E-Waste',
         'value': ewasteKg,
          'url':"assets/images/ewaste.jpg",
-          'des':"We buy cardboard products, including book covers, food boxes, cosmetic boxes, shipping boxes, moving boxes, protective packaging, grocery bags, and envelopes.",
-        
+        'des': "We buy electronic waste, including gas stoves, iron boxes, table fans, ceiling fans, refrigerators, washing machines, microwaves, computers, printers, and other household and office electronic appliances.",
+
         'onAdd': () {
           if (ewasteKg > 400) {
             confirmAction(context);
@@ -685,8 +685,8 @@ Widget build(BuildContext context) {
         'label': 'Iron',
         'value': metalKg,
         'url':"assets/images/iron.jpg",
-         'des':"We buy cardboard products, including book covers, food boxes, cosmetic boxes, shipping boxes, moving boxes, protective packaging, grocery bags, and envelopes.",
-        
+        'des': "We buy iron products, including iron rods, iron pipes, iron sheets, iron tins, gates, grills, frames, and all other iron and steel materials.",
+
         'onAdd': () {
           if (metalKg > 400) {
             confirmAction(context);
@@ -702,8 +702,7 @@ Widget build(BuildContext context) {
         'label': 'Coper Wire',
         'value': cwirekg,
          'url':"assets/images/wcopper.jpg",
-          'des':"We buy cardboard products, including book covers, food boxes, cosmetic boxes, shipping boxes, moving boxes, protective packaging, grocery bags, and envelopes.",
-        
+         'des': "We buy copper wire, including electrical copper wires, insulated copper wires, bare copper wires, and all other types of copper wiring.", 
         'onAdd': () {
           if (cwirekg > 400) {
             confirmAction(context);
@@ -719,8 +718,8 @@ Widget build(BuildContext context) {
         'label': 'Coper',
         'value': wirekg,
          'url':"assets/images/copper.jpg",
-          'des':"We buy cardboard products, including book covers, food boxes, cosmetic boxes, shipping boxes, moving boxes, protective packaging, grocery bags, and envelopes.",
-        
+        'des': "We buy pure copper extracted from wires, including copper obtained by burning, stripping, or carving wires, and other refined copper materials.",
+
         'onAdd': () {
           if (wirekg > 400) {
             confirmAction(context);
@@ -736,8 +735,8 @@ Widget build(BuildContext context) {
         'label': 'Silver',
         'value': silverkg,
          'url':"assets/images/silver.jpg",
-          'des':"We buy cardboard products, including book covers, food boxes, cosmetic boxes, shipping boxes, moving boxes, protective packaging, grocery bags, and envelopes.",
-        
+         'des': "We buy silver items, including silver plates, bowls, cups, jewelry, coins, utensils, ornaments, and all other silver products.",
+
         'onAdd': () {
           if (silverkg > 400) {
             confirmAction(context);
@@ -753,8 +752,8 @@ Widget build(BuildContext context) {
         'label': 'Brass',
         'value': brasskg,
          'url':"assets/images/brass.jpg",
-          'des':"We buy cardboard products, including book covers, food boxes, cosmetic boxes, shipping boxes, moving boxes, protective packaging, grocery bags, and envelopes.",
-        
+         'des': "We buy brass items, including brass vessels, taps, valves, fittings, decorative pieces, utensils, and all other brass products.",
+
         'onAdd': () {
           if (brasskg > 400) {
             confirmAction(context);
@@ -822,8 +821,8 @@ Widget build(BuildContext context) {
         'label': 'Fridge',
         'value': fridgekg,
         'url':"assets/images/fridge.jpg",
-         'des':"We buy cardboard products, including book covers, food boxes, cosmetic boxes, shipping boxes, moving boxes, protective packaging, grocery bags, and envelopes.",
-        
+        'des': "We buy all types of fridges, including single-door and double-door models, as long as they have a compressor.",
+
         'onAdd': () {
           if (fridgekg > 400) {
             confirmAction(context);
@@ -839,8 +838,8 @@ Widget build(BuildContext context) {
         'label': 'Ac',
         'value': ackg,
          'url':"assets/images/ac.jpg",
-          'des':"We buy cardboard products, including book covers, food boxes, cosmetic boxes, shipping boxes, moving boxes, protective packaging, grocery bags, and envelopes.",
-        
+        'des': "We buy complete AC units, including window and split ACs, as long as they have all their parts intact.",
+
         'onAdd': () {
           if (ackg > 400) {
             confirmAction(context);
@@ -856,8 +855,8 @@ Widget build(BuildContext context) {
         'label': 'Mixed',
         'value': mixedkg,
          'url':"assets/images/ewaste.jpg",
-          'des':"We buy cardboard products, including book covers, food boxes, cosmetic boxes, shipping boxes, moving boxes, protective packaging, grocery bags, and envelopes.",
-        
+       'des': "We buy e-waste, including non-commercial wires, hair dryers, printers, CPUs, ovens, mixers, TVs, keyboards, and other household electronic appliances.",
+
         'onAdd': () {
           if (mixedkg > 400) {
             confirmAction(context);
