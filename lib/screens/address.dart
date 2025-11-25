@@ -440,114 +440,117 @@ Future<void> showPickupDetailsPopup({
               color: Colors.white,
               borderRadius: BorderRadius.circular(12),
             ),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 16),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  // Header
-                  Semantics(
-                    header: true,
-                    child: Row(
-                      children: [
-                        const Icon(Icons.calendar_today_outlined, size: 18, color: Colors.black54),
-                        const SizedBox(width: 8),
-                        const Text(
-                          'Pickup details',
-                          style: TextStyle(fontWeight: FontWeight.w700),
-                        ),
-                        const Spacer(),
-                        Tooltip(
-                          message: 'Edit pickup details',
-                          child: TextButton.icon(
-                            onPressed: () => Navigator.pop(context),
-                            icon: const Icon(Icons.edit, size: 18, color: Colors.white),
-                            label: const Text('Edit', style: TextStyle(color: Colors.white)),
-                            style: TextButton.styleFrom(
-                              backgroundColor: const Color(0xFF1D4D61),
-                              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-                            ),
+            child: SingleChildScrollView(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 16),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    // Header
+                    Semantics(
+                      header: true,
+                      child: Row(
+                        children: [
+                          const Icon(Icons.calendar_today_outlined, size: 18, color: Colors.black54),
+                          const SizedBox(width: 8),
+                          const Text(
+                            'Pickup details',
+                            style: TextStyle(fontWeight: FontWeight.w700),
                           ),
+                          // const Spacer(),
+                          // Tooltip(
+                          //   message: 'Edit pickup details',
+                          //   child: TextButton.icon(
+                          //     onPressed: () => Navigator.pop(context),
+                          //     icon: const Icon(Icons.edit, size: 18, color: Colors.white),
+                          //     label: const Text('Edit', style: TextStyle(color: Colors.white)),
+                          //     style: TextButton.styleFrom(
+                          //       backgroundColor: const Color(0xFF1D4D61),
+                          //       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                          //     ),
+                          //   ),
+                          // ),
+                    
+                    ],
+                      ),
+                    ),
+                    const Divider(height: 14),
+              
+                    // Pickup Type
+                    Semantics(
+                      label: 'Pickup type details',
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 6),
+                        child: Row(
+                          children: [
+                            const SizedBox(
+                                width: 100,
+                                child: Text('Type', style: TextStyle(color: Colors.black54))),
+                            Expanded(
+                                child: Text(selectedType.isNotEmpty ? selectedType : '—')),
+                          ],
                         ),
-                      ],
-                    ),
-                  ),
-                  const Divider(height: 14),
-
-                  // Pickup Type
-                  Semantics(
-                    label: 'Pickup type details',
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 6),
-                      child: Row(
-                        children: [
-                          const SizedBox(
-                              width: 100,
-                              child: Text('Type', style: TextStyle(color: Colors.black54))),
-                          Expanded(
-                              child: Text(selectedType.isNotEmpty ? selectedType : '—')),
-                        ],
                       ),
                     ),
-                  ),
-
-                  // Pickup Date
-                  Semantics(
-                    label: 'Pickup date details',
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 6),
-                      child: Row(
-                        children: [
-                          const SizedBox(
-                              width: 100,
-                              child: Text('Date', style: TextStyle(color: Colors.black54))),
-                          Expanded(
-                              child: Text(selectedDate.isNotEmpty ? selectedDate : '—')),
-                        ],
+              
+                    // Pickup Date
+                    Semantics(
+                      label: 'Pickup date details',
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 6),
+                        child: Row(
+                          children: [
+                            const SizedBox(
+                                width: 100,
+                                child: Text('Date', style: TextStyle(color: Colors.black54))),
+                            Expanded(
+                                child: Text(selectedDate.isNotEmpty ? selectedDate : '—')),
+                          ],
+                        ),
                       ),
                     ),
-                  ),
-
-                  // Pickup Time
-                  Semantics(
-                    label: 'Pickup time range details',
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 6),
-                      child: Row(
-                        children: [
-                          const SizedBox(
-                              width: 100,
-                              child: Text('Time', style: TextStyle(color: Colors.black54))),
-                          Expanded(
-                              child: Text(
-                                  selectedTimeRange.isNotEmpty ? selectedTimeRange : '—')),
-                        ],
+              
+                    // Pickup Time
+                    Semantics(
+                      label: 'Pickup time range details',
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 6),
+                        child: Row(
+                          children: [
+                            const SizedBox(
+                                width: 100,
+                                child: Text('Time', style: TextStyle(color: Colors.black54))),
+                            Expanded(
+                                child: Text(
+                                    selectedTimeRange.isNotEmpty ? selectedTimeRange : '—')),
+                          ],
+                        ),
                       ),
                     ),
-                  ),
-
-                  const SizedBox(height: 8),
-                  const Text('Items', style: TextStyle(color: Colors.black54)),
-                  const SizedBox(height: 6),
-
-                  // Items Chips
-                  Semantics(
-                    label: 'Items selected for pickup',
-                    child: Wrap(
-                      spacing: 8,
-                      runSpacing: 6,
-                      children: (selectedItems.isNotEmpty
-                              ? selectedItems
-                              : ['—'])
-                          .map((it) => Chip(
-                                label: Text(it),
-                                backgroundColor: Colors.grey.shade100,
-                              ))
-                          .toList(),
+              
+                    const SizedBox(height: 8),
+                    const Text('Items', style: TextStyle(color: Colors.black54)),
+                    const SizedBox(height: 6),
+              
+                    // Items Chips
+                    Semantics(
+                      label: 'Items selected for pickup',
+                      child: Wrap(
+                        spacing: 8,
+                        runSpacing: 6,
+                        children: (selectedItems.isNotEmpty
+                                ? selectedItems
+                                : ['—'])
+                            .map((it) => Chip(
+                                  label: Text(it),
+                                  backgroundColor: Colors.grey.shade100,
+                                ))
+                            .toList(),
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),
