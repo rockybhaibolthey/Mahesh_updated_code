@@ -34,7 +34,7 @@ class _GeneralPickupPageState extends State<GeneralPickupPage> {
   int fridgekg = 0;
   int ackg = 0;
   int mixedkg = 0;
-
+ 
   @override
   void initState() {
     super.initState();
