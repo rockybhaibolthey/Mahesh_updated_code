@@ -1,4 +1,4 @@
- // requests_page.dart
+// requests_page.dart
 import 'dart:convert';
 import 'dart:io';
 import 'package:cyklze/Provider/pickup_provider.dart';
@@ -719,14 +719,20 @@ Widget _listView() {
         ),
 
         const SizedBox(height: 8), // reduced spacing before progress bar
-        if(it.status != 'cancel' || it.status != 'Cancel' ||it.status != 'cancelled' || it.status != 'Cancelled')
-        StatusProgressBar(status: it.code),
+       if (it.status.toLowerCase() != 'cancel' &&
+    it.status.toLowerCase() != 'cancelled')
+  StatusProgressBar(status: it.code),
+
 
         const SizedBox(height: 8), // reduced spacing before buttons
         Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            if(it.status != 'cancel' || it.status != 'Cancel' ||it.status != 'cancelled' || it.status != 'Cancelled'||it.status != "Completed"|| it.status != "completed"|| it.status != "done"|| it.status != "Done") ...[
+if (it.status.toLowerCase() != 'cancel' &&
+    it.status.toLowerCase() != 'cancelled' &&
+    it.status.toLowerCase() != 'completed' &&
+    it.status.toLowerCase() != 'done')
+ ...[
               Semantics(
                 button: true,
                 label: 'Cancel order',
