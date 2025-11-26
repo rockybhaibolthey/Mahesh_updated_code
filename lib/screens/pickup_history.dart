@@ -70,6 +70,7 @@ class RequestsPage extends StatefulWidget {
 class _RequestsPageState extends State<RequestsPage> {
   Pagestate _state = Pagestate.loading;
   final List<RequestItem> _items = [];
+  var showno = false;
   int _refreshAttempts = 0;
   static const int _maxRefreshAttempts = 1; 
   final _scaffoldKey = GlobalKey<ScaffoldState>();
@@ -124,7 +125,7 @@ final   provider = Provider.of<PickupProvider>(context, listen: false);
         final data = body['data'];
         if (data == null || (data is List && data.isEmpty)) {
           setState(() {
-         
+         showno = true;
             _state = Pagestate.loggedIn;
           });
           return;
@@ -150,6 +151,8 @@ final   provider = Provider.of<PickupProvider>(context, listen: false);
            
             }
           }
+        }else{
+showno = true;
         }
 
         setState(() {
@@ -299,70 +302,76 @@ void _showOrderDetails(RequestItem item) {
     context: context,
     builder: (_) => Dialog(
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(16.0), 
+        borderRadius: BorderRadius.circular(16.0),
       ),
-      child: Container(
-        color: Colors.white,
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Semantics(
-              label: 'Order Details for ${item.pickupType}',
-              child: Text(
-                '${item.pickupType} • ${item.time}',
-                style: const TextStyle(
-                  fontSize: 18.0,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black87,
-                ),
-              ),
-            ),
-            const SizedBox(height: 10.0), 
-
-            Semantics(
-              label: 'Order details: ${item.details}',
-              child: SingleChildScrollView(
-                child: Text(
-                  item.details,
-                  style: const TextStyle(
-                    fontSize: 14.0,
-                    color: Colors.black54,
+      child: ConstrainedBox(
+        constraints: const BoxConstraints(
+          maxHeight: 500, // prevents dialog from growing too large
+        ),
+        child: SingleChildScrollView(
+          child: Container(
+            color: Colors.white,
+            padding: const EdgeInsets.all(20.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Semantics(
+                  label: 'Order Details for ${item.pickupType}',
+                  child: Text(
+                    '${item.pickupType} • ${item.time}',
+                    style: const TextStyle(
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black87,
+                    ),
                   ),
                 ),
-              ),
-            ),
-            const SizedBox(height: 20.0), 
 
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-               Semantics(
-  button: true,
-  label: 'Close the order details dialog',
-  child: TextButton(
-    onPressed: () => Navigator.pop(context),
-    style: TextButton.styleFrom(
-      backgroundColor: const Color(0xFF1D4D61),    
-      foregroundColor: Colors.white,    
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(8),
-      ),
-    ),
-    child: const Text(
-      'Close',
-      style: TextStyle(
-        fontWeight: FontWeight.w600,
-      ),
-    ),
-  ),
-),
+                const SizedBox(height: 10.0),
 
+                Semantics(
+                  label: 'Order details: ${item.details}',
+                  child: Text(
+                    item.details,
+                    style: const TextStyle(
+                      fontSize: 14.0,
+                      color: Colors.black54,
+                    ),
+                  ),
+                ),
+
+                const SizedBox(height: 20.0),
+
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Semantics(
+                      button: true,
+                      label: 'Close the order details dialog',
+                      child: TextButton(
+                        onPressed: () => Navigator.pop(context),
+                        style: TextButton.styleFrom(
+                          backgroundColor: const Color(0xFF1D4D61),
+                          foregroundColor: Colors.white,
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 16, vertical: 10),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                        ),
+                        child: const Text(
+                          'Close',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                )
               ],
             ),
-          ],
+          ),
         ),
       ),
     ),
@@ -446,7 +455,23 @@ void _showOrderDetails(RequestItem item) {
               onRetry: _getOrders,
             ); {}
       case Pagestate.loggedIn:
-        return _listView();
+        return Column(
+          children: [
+           if(showno) Center(
+             child: Text(
+               "No pickups placed",
+               style: TextStyle(
+                 fontSize: 18,
+                 fontWeight: FontWeight.w500,
+                 color: Colors.grey.shade600,
+               ),
+               textAlign: TextAlign.center,
+             ),
+           )
+,
+            Expanded(child: _listView()),
+          ],
+        );
     }
   }
 
