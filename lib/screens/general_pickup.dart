@@ -1219,6 +1219,30 @@ class _MaterialSliderState extends State<MaterialSlider> {
     final double width = MediaQuery.of(context).size.width;
     final double imageSize = width * 0.5; // 50% of parent width
 
+String lbl = widget.label.toLowerCase();
+
+final add100 = {
+  "plastic",
+  "glass",
+  "paper",
+  "books",
+  "e-waste",
+  "cardboard",
+  "iron",
+  "copper wire",
+  "silver",
+  "mixed"
+};
+
+final add10 = {
+  "copper",
+  "brass"
+};
+
+final add1 = {
+  "fridge",
+  "ac"
+};
     return Container(
       width: width, // full parent width
       height: MediaQuery.of(context).size.height * 0.5, // mid-screen height
@@ -1277,8 +1301,15 @@ class _MaterialSliderState extends State<MaterialSlider> {
                     widget.onRemove();
                     if (!mounted) return;
                     setState(() {
-                      num = (num - 10).clamp(0, 9999); // prevent negative if desired
-                    });
+                       if (add100.contains(lbl)) {
+    num = (num - 100).clamp(0, 9999);
+  } else if (add10.contains(lbl)) {
+    num = (num - 10).clamp(0, 9999);
+  } else if (add1.contains(lbl)) {
+    num = (num - 1).clamp(0, 9999);
+  } else {
+    num = (num - 10).clamp(0, 9999); // default
+  }  });
                   },
                 ),
                 Text(
@@ -1295,7 +1326,15 @@ class _MaterialSliderState extends State<MaterialSlider> {
                     widget.onAdd();
                     if (!mounted) return;
                     setState(() {
-                      num += 10;
+                      if (add100.contains(lbl)) {
+  num += 100;
+} else if (add10.contains(lbl)) {
+  num += 10;
+} else if (add1.contains(lbl)) {
+  num += 1;
+} else {
+  num += 10; // default
+}
                     });
                   },
                 ),
