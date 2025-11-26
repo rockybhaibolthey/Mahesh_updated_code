@@ -26,7 +26,7 @@ Widget build(BuildContext context) {
           ),
         ],
       ),
-      padding: const EdgeInsets.all(12), // reduced padding
+      padding: const EdgeInsets.all(6), // reduced padding
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
@@ -67,7 +67,7 @@ Widget build(BuildContext context) {
                 child: const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5), // tighter padding
                   child: Text(
-                    "Schedule Now",
+                    "Schedule",
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 14, // smaller font
