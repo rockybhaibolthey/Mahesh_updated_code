@@ -1,4 +1,4 @@
- // requests_page.dart
+// requests_page.dart
 import 'dart:convert';
 import 'dart:io';
 import 'package:cyklze/Provider/pickup_provider.dart';
@@ -726,7 +726,7 @@ Widget _listView() {
         Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            if(it.status == 'cancel' || it.status == 'Cancel' ||it.status == 'cancelled' || it.status == 'Cancelled'||it.status == "Completed"|| it.status == "completed"|| it.status == "done"|| it.status == "Done") ...[
+            if(it.status != 'cancel' || it.status != 'Cancel' ||it.status != 'cancelled' || it.status != 'Cancelled'||it.status != "Completed"|| it.status != "completed"|| it.status != "done"|| it.status != "Done") ...[
               Semantics(
                 button: true,
                 label: 'Cancel order',
