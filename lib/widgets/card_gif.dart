@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 class HalloweenCard extends StatelessWidget {
   const HalloweenCard({super.key});
-
+ 
 @override
 Widget build(BuildContext context) {
   return InkWell(
